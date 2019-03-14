@@ -1,5 +1,7 @@
 const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const env = process.env.NODE_ENV;
 
@@ -14,11 +16,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          "style-loader", // creates style nodes from JS strings
-          "css-loader", // translates CSS into CommonJS
-          "sass-loader" // compiles Sass to CSS, using Node Sass by default
-        ]
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
       }
     ]
   },
@@ -31,6 +33,11 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html"
+    }),
+    new CopyPlugin([{ from: "./public/images", to: "./images" }]),
     new webpack.HotModuleReplacementPlugin(),
     new Dotenv({
       path: `./.env.${env === "production" ? "prd" : "dev"}`

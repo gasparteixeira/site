@@ -10,7 +10,7 @@ const App = props => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div>
+        <div className="container">
           <NProgress color="#9e7806" />
           <RootRoute />
         </div>

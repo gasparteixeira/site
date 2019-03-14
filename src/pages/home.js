@@ -6,13 +6,11 @@ import { connect } from "react-redux";
 class Page extends React.Component {
   render() {
     return (
-      <Container>
+      <Container className="vertical-center">
         <Row>
-          <Col md={6} sm={12}>
-            Coluna 1
-          </Col>
-          <Col md={6} sm={12}>
-            Coluna 2
+          <Col xs={12}>
+            <strong>under construction</strong>
+            <p>gaspar.teixeira@gmail.com</p>
           </Col>
         </Row>
       </Container>
