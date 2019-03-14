@@ -45,6 +45,9 @@ module.exports = {
   ],
   devServer: {
     contentBase: "./dist",
-    hot: true
+    compress: true,
+    inline: true,
+    port: "8080",
+    allowedHosts: [".gasparteixeira.com"]
   }
 };
