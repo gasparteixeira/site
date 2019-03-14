@@ -45,9 +45,6 @@ module.exports = {
   ],
   devServer: {
     contentBase: "./dist",
-    compress: true,
-    inline: true,
-    port: "8080",
-    allowedHosts: [".amazonaws.com"]
+    disableHostCheck: true
   }
 };
