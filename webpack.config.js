@@ -48,6 +48,6 @@ module.exports = {
     compress: true,
     inline: true,
     port: "8080",
-    allowedHosts: [".gasparteixeira.com"]
+    allowedHosts: [".amazonaws.com"]
   }
 };
