@@ -10,7 +10,7 @@ class Page extends React.Component {
         <Row>
           <Col xs={12}>
             <strong>under construction</strong>
-            <p>gaspar.teixeira@gmail.com</p>
+            <p>contact@gasparteixeira.com</p>
           </Col>
         </Row>
       </Container>
