@@ -7,6 +7,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
 
 const robotsOptions = {
@@ -91,7 +92,14 @@ module.exports = (env, options) => {
         template: "./public/index.html",
         filename: "./index.html"
       }),
+      new WebpackPwaManifest({
+        name: "Gaspar Teixeira",
+        short_name: "Gaspar",
+        description: "Manifest for Gaspar Teixeira",
+        background_color: "#ffffff"
+      }),
       new WorkboxPlugin.GenerateSW({
+        swDest: "sw.js",
         clientsClaim: true,
         skipWaiting: true
       }),
