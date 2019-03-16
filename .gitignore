@@ -3,3 +3,4 @@ node_modules
 .env.prd
 .env.dev
 dist
+package-lock.json
