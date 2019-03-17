@@ -120,7 +120,11 @@ module.exports = (env, options) => {
       new CopyPlugin([{ from: "./public/images", to: "./images" }]),
       new webpack.HotModuleReplacementPlugin(),
       new Dotenv({
-        path: `./.env.${mode === "production" ? "prd" : "dev"}`
+        path: "./.env",
+        safe: true,
+        systemvars: true,
+        silent: true,
+        defaults: false
       }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
