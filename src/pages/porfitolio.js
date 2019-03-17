@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 class Page extends React.Component {
@@ -8,7 +8,10 @@ class Page extends React.Component {
     return (
       <Container>
         <Row>
-          <Col xs={12}>Portifolio</Col>
+          <Col xs={12}>
+            Portifolio
+            <Link to="/404">404</Link>
+          </Col>
         </Row>
       </Container>
     );
